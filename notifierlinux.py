@@ -20,7 +20,6 @@ def send_notification(title, message):
         check=False
     )
  
-    # Optional sound (skipped silently if not available)
     sound_file = "/usr/share/sounds/freedesktop/stereo/message.oga"
  
     if shutil.which("paplay"):

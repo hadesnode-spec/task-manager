@@ -43,7 +43,7 @@ def add_task_menu():
         due_datetime
     )
 
-    print("\n✓ Task added successfully!\n")
+    print("\n Task added successfully!\n")
 
 
 def view_tasks_menu():

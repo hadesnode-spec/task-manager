@@ -1,7 +1,8 @@
-Integrated systemd and 
+Integrated systemd oinside linux 
+for the service to work even when the file is closed pull the install_linux.sh file and then run the fiollowing cmds:
+chmod +x install_linux.sh
+./install_linux.sh
 
-for now run main.py to add tasks 
-
-then run reminder.py to get notifications there is a latency of 10 seconds 
+ run main.py to add tasks 
 
 

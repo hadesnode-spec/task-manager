@@ -10,7 +10,7 @@ from database import (
 from notifier import send_notification
 
 
-CHECK_INTERVAL = 30
+CHECK_INTERVAL = 10
 
 
 def check_tasks():

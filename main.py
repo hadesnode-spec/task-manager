@@ -9,7 +9,6 @@ from database import (
 
 def add_task_menu():
 
-    print("\n========== ADD TASK ==========\n")
 
     title = input("Enter task title: ").strip()
 
@@ -51,7 +50,6 @@ def view_tasks_menu():
 
     tasks = get_all_tasks()
 
-    print("\n========== TASKS ==========\n")
 
     if not tasks:
 
@@ -88,10 +86,6 @@ def main():
     while True:
 
         print("""
-=============================
-        TASK MANAGER
-=============================
-
 1. Add Task
 2. View Tasks
 3. Exit

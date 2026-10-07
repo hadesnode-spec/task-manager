@@ -118,7 +118,7 @@ def add_task_menu():
     if not title:
 
         print(
-            "\n❌ Task title cannot be empty.\n"
+            "\nTask title cannot be empty.\n"
         )
 
         return
@@ -140,34 +140,19 @@ Duration examples:
 1d 12h 30m = 1 day 12 hours 30 minutes
 """)
 
-    # -----------------------------------------
-    # Due time
-    # -----------------------------------------
 
     due_duration = get_duration_input(
         "\nDue after: "
     )
-
-    # -----------------------------------------
-    # Delete time
-    # -----------------------------------------
 
     delete_duration = get_duration_input(
         "Delete after (or 'never'): ",
         allow_never=True
     )
 
-    # -----------------------------------------
-    # Recurring?
-    # -----------------------------------------
-
     recurring = get_yes_no(
         "Repeat every day? (y/n): "
     )
-
-    # -----------------------------------------
-    # Calculate actual times
-    # -----------------------------------------
 
     created_time = datetime.now()
 
@@ -184,7 +169,7 @@ Duration examples:
         if delete_datetime <= due_datetime:
 
             print(
-                "\n❌ Delete time must be AFTER "
+                "\n Delete time must be AFTER "
                 "the due time.\n"
             )
 
@@ -205,10 +190,6 @@ Duration examples:
             DATETIME_FORMAT
         )
     )
-
-    # -----------------------------------------
-    # Save task
-    # -----------------------------------------
 
     add_task(
         title,
@@ -255,7 +236,6 @@ def view_tasks_menu():
 
     tasks = get_all_tasks()
 
-    print("\n========== TASKS ==========\n")
 
     if not tasks:
 

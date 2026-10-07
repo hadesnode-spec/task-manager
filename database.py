@@ -2,7 +2,6 @@ import sqlite3
 from pathlib import Path
 
 
-# Keep the database inside the project folder
 DB_NAME = Path(__file__).resolve().parent / "tasks.db"
 
 
@@ -27,11 +26,6 @@ def create_table():
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     """)
-
-    # -----------------------------------------
-    # Database migration for older databases
-    # -----------------------------------------
-
     cursor.execute("PRAGMA table_info(tasks)")
     columns = [column[1] for column in cursor.fetchall()]
 

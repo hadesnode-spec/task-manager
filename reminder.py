@@ -8,11 +8,8 @@ from database import (
     update_recurring_task,
     delete_expired_tasks
 )
-
 from notifier import send_notification
 CHECK_INTERVAL = 10
-
-
 def check_tasks():
 
     current_datetime = datetime.now()

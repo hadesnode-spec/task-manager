@@ -9,13 +9,11 @@ SERVICE_DIR="$HOME/.config/systemd/user"
 SERVICE_FILE="$SERVICE_DIR/taskmanager.service"
 
 
-# Check Python
 if ! command -v python3 >/dev/null 2>&1; then
     echo "Error: Python 3 is not installed."
     exit 1
 fi
 
-# Check systemd user support
 if ! command -v systemctl >/dev/null 2>&1; then
     echo "Error: systemctl is not available."
     exit 1

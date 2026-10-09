@@ -151,7 +151,7 @@ Duration examples:
     )
 
     recurring = get_yes_no(
-        "Repeat every day? (y/n): "
+        "Repeat every day? "
     )
 
     created_time = datetime.now()

@@ -13,7 +13,7 @@ class Task:
         completed=False,
         notified=False,
         recurring=False,
-    ):
+    ) -> None:
         self._id=task_id
         self.title=title
         self.description=description
@@ -22,39 +22,42 @@ class Task:
         self._completed=completed
         self._notified=notified
         self._recurring=recurring
-        self._validate()
 
     @property
-    def id(self):
+    def id(self) -> int:
         return self._id
 
     @property
-    def title(self):
+    def title(self) -> str:
         return self._title
 
     @title.setter
-    def title(self, value):
+    def title(self, value: str) -> None:
         if not isinstance(value, str) or not value.strip():
             raise ValueError("Task title cannot be empty.")
         self._title = value.strip()
 
     @property
-    def completed(self):
-        return self._completed
+    def due_datetime(self) -> datetime:
+        return self._due_datetime
 
     @property
-    def notified(self):
+    def delete_datetime(self):
+        return self._delete_datetime
+
+    @property
+    def notified(self) -> bool:
         return self._notified
 
     @property
-    def recurring(self):
+    def recurring(self) -> bool:
         return self._recurring
 
     def _validate(self):
         if not isinstance(self.due_datetime, datetime):
             raise ValueError("A valid due datetime is required.")
 
-        if self.delete_datetime is not None:
+        if not self.delete_datetime is None:
             if not isinstance(self.delete_datetime, datetime):
                 raise ValueError("Invalid delete datetime.")
 
@@ -69,10 +72,10 @@ class Task:
         if duration.total_seconds() <= 0:
             raise ValueError("Duration must be greater than zero.")
 
-    def complete(self):
+    def complete(self) -> None:
         self._completed = True
 
-    def mark_notified(self):
+    def mark_notified(self) -> None:
         self._notified = True
 
     def reschedule(self,next_due_datetime=None):
